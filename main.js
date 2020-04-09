@@ -14,8 +14,16 @@ console.log('Alien Hangman Game')
 //user name will be in top middle area
 
 //letter box array
-var letterBoxArr =['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i','j', 'k', 
+const letterBoxArr =['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i','j', 'k', 
 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z',]
 console.log(letterBoxArr)
 
 //choosing categories
+const categoriesArr = ['sports', 'fashion icons', 'famouss cities', 'musical instruments']
+console.log(categoriesArr)
+
+//words for each categories
+    //sports: baseball, cricket, judo, hang gliding, volleyball, yoga
+    //fashion icons: audrey hepburn, rihanna, mary and ashley olsen, princess diana, bob dylan, kanye west
+    //famous cities: paris, dubai, new york, kuala lumpa, istanbul, london, los angelos
+    //musical instruments: trombone, french horn, oboe, xylophone, synthesizer, lute, electric guitar
