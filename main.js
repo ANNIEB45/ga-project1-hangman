@@ -19,6 +19,16 @@ console.log('Alien Hangman Game')
 // console.log(letterBoxArr)
 
      //maybe use an object-with key/value pair???
+     const categories = {
+        sports: ['baseball', 'cricket','judo','hang gliding', 'volleyball', 'yoga'],
+        
+        'fashion icons': ['audrey hepburn', 'rihanna', 'mary and ashley olsen', 'princess diana', 'bob dylan', 'kanye west'],
+        'famous cities': ['paris', 'dubai', 'new york', 'kuala lumpa', 'istanbul', 'london', 'los angelos'],
+        'musical instruments': ['trombone', 'french horn', 'oboe', 'xylophone', 'synthesizer', 'lute', 'electric guitar']
+    }
+
+    console.log(categories)
+
 //choosing categories
 // const categoriesArr = ['sports', 'fashion icons', 'famouss cities', 'musical instruments']
 // console.log(categoriesArr)
@@ -30,23 +40,29 @@ console.log('Alien Hangman Game')
     //musical instruments: trombone, french horn, oboe, xylophone, synthesizer, lute, electric guitar
 
 
-let words = ['baseball', 'french horn','Georgetown', 'Onamanopeia']
-console.log(words)
+let chosenCategory = categories["famous cities"]
+console.log(chosenCategory)
 
-let word = words[(Math.floor(Math.random()) * words.length)]
+let word = chosenCategory[(Math.floor(Math.random()) * chosenCategory.length)]
 console.log(word)
 
 let answerInputField = []
 
 for (let i = 0; i < word.length; i++){
-        answerInputField[i] = '_'
+        answerInputField[i] = '|_|'
     console.log(answerInputField)
 }
 
 let remainingLetters = word.length
 console.log(remainingLetters)
 
+const line = () => {document.getElementsByClassName('lines').innerHTML = (answerInputField.join(' ')) }
+line()
+console.log(line)
 
+// while(remainingLetters >0){
+   
+// }
  
 
 
