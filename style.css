@@ -2,7 +2,7 @@ body {
    background-color: orange;
 }
 
-.game-subtitle{
+ .game-subtitle{
    display: flex;
    align-items: center;
    justify-content: center;
@@ -31,7 +31,16 @@ body {
    padding-bottom: 48px;
 }
 
-
+.timer{
+   display: flex;
+   flex-direction: row;
+   justify-content:flex-end ;
+   align-items: flex-end;
+   border: 3px solid green;
+   border-radius: 80%;
+   width: 10%;
+   padding-bottom: 48px; 
+}
 
 .letter-box{
    border: 3px solid blue;
@@ -45,4 +54,4 @@ body {
 .squares{
    padding:50px ;
    border-radius: 10&;
-}
+} 
