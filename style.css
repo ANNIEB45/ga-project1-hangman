@@ -1,56 +1,5 @@
-/* body {
-   background-color: orange;
-}
- .game-subtitle{
-   display: flex;
-   align-items: center;
-   justify-content: center;
+body {
+   font-size: 15px;
 }
 
-.user-guess-container{
-   display: flex;
-   flex-direction: row;
-   justify-content: flex-start;
-   align-items: flex-end;
 
-}
-
-.wrong-guesses{
-   border: 3px solid green;
-   border-radius: 20%;
-   width: 16%;
-   padding-bottom: 48px;
-
-}
-
-.username-box{
-   border: 3px solid green;
-   border-radius: 20%;
-   width: 16%;
-   padding-bottom: 48px;
-}
-
-.timer{
-   display: flex;
-   flex-direction: row;
-   justify-content:flex-end ;
-   align-items: flex-end;
-   border: 3px solid green;
-   border-radius: 80%;
-   width: 10%;
-   padding-bottom: 48px; 
-}
-
-.letter-box{
-   border: 3px solid blue;
-   width: 15%;
-   height: ;
-   padding: ;
-   margin: 45px 0;
-   border-radius: 30%;
-}
-
-.squares{
-   padding:50px ;
-   border-radius: 10&;
-}  */
