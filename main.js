@@ -1,69 +1,38 @@
-console.log('Alien Hangman Game')
+//variables for letters
+const alphabetForLetterBox = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k',
+    'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z',]
 
-
-//popup box appear w/intro to game
-
-//prompt user to input name
-
-//prompt user to pick game level
-
-//popup box will disappear
-
-//another popup will appear asking user to pick category
-
-//user name will be in top middle area
-
-//letter box array
-// const letterBoxArr =['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i','j', 'k', 
-// 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z',]
-// console.log(letterBoxArr)
-
-     //maybe use an object-with key/value pair???
-     const categories = {
-        sports: ['baseball', 'cricket','judo','hang gliding', 'volleyball', 'yoga'],
-        
-        'fashion icons': ['audrey hepburn', 'rihanna', 'mary and ashley olsen', 'princess diana', 'bob dylan', 'kanye west'],
-        'famous cities': ['paris', 'dubai', 'new york', 'kuala lumpa', 'istanbul', 'london', 'los angelos'],
-        'musical instruments': ['trombone', 'french horn', 'oboe', 'xylophone', 'synthesizer', 'lute', 'electric guitar']
+//div with class letter-box
+const letterBox = document.querySelector('.letter-box')
+//this function is to create the letter box to hold the alphabets
+const newLetter = () => {
+    //created a ul element
+    alphabetList = document.createElement('ul')
+    for (let i = 0; i < alphabetForLetterBox.length; i++) {
+        alphabetList.class = 'alphabet-box'
+        //create list element
+        listEl = document.createElement('li')
+        listEl.class = 'squares'
+        //add the alphabet index to each li element
+        listEl.innerHTML = alphabetForLetterBox[i];
+        //append the ul to the div and the li to the ul
+        letterBox.appendChild(alphabetList)
+        alphabetList.appendChild(listEl)
+        }
     }
-
-    console.log(categories)
-
-//choosing categories
-// const categoriesArr = ['sports', 'fashion icons', 'famouss cities', 'musical instruments']
-// console.log(categoriesArr)
-
-//words for each categories
-    //sports: baseball, cricket, judo, hang gliding, volleyball, yoga
-    //fashion icons: audrey hepburn, rihanna, mary and ashley olsen, princess diana, bob dylan, kanye west
-    //famous cities: paris, dubai, new york, kuala lumpa, istanbul, london, los angelos
-    //musical instruments: trombone, french horn, oboe, xylophone, synthesizer, lute, electric guitar
+console.log(newLetter())
 
 
-let chosenCategory = categories["famous cities"]
-console.log(chosenCategory)
+//categories for the game- this will be shown in the pop up screen
+const categories = {
+    sports: ['baseball', 'cricket', 'judo', 'hang gliding', 'volleyball', 'yoga'],
 
-let word = chosenCategory[(Math.floor(Math.random()) * chosenCategory.length)]
-console.log(word)
-
-let answerInputField = []
-
-for (let i = 0; i < word.length; i++){
-        answerInputField[i] = '|_|'
-    console.log(answerInputField)
+    'fashion icons': ['audrey hepburn', 'rihanna', 'mary and ashley olsen', 'princess diana', 'bob dylan', 'kanye west'],
+    'famous cities': ['paris', 'dubai', 'new york', 'kuala lumpa', 'istanbul', 'london', 'los angelos'],
+    'musical instruments': ['trombone', 'french horn', 'oboe', 'xylophone', 'synthesizer', 'lute', 'electric guitar']
 }
 
-let remainingLetters = word.length
-console.log(remainingLetters)
 
-const line = () => {document.getElementsByClassName('lines').innerHTML = (answerInputField.join(' ')) }
-line()
-console.log(line)
-
-// while(remainingLetters >0){
-   
-// }
- 
 
 
 
