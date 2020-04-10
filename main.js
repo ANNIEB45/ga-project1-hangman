@@ -27,6 +27,17 @@ for (let i = 0; i < chosenWord.length; i++) {
 }
 answerInput.innerHTML = answerInputField.join(' ')
 
+//add hover and click event listener 
+letterBox.addEventListener('mouseover', (event) =>{
+    event.target.style.color = 'red'
+
+    setTimeout( () => {
+        event.target.style.color = ''
+    }, 800)
+})
+
+
+
 
 
 
