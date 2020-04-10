@@ -5,6 +5,9 @@ const alphabetForLetterBox = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 
 
 //global variables:
 const guessesLeft = document.querySelector('.guesses-left')
+const letterBox = document.querySelector('.letter-box')
+console.log(letterBox)
+
 
 
 //categories for the game- 
@@ -25,8 +28,10 @@ for (let i = 0; i < chosenWord.length; i++) {
 answerInput.innerHTML = answerInputField.join(' ')
 
 
+
+
+
 // //div with class letter-box
-const letterBox = document.querySelector('.letter-box')
 //this function is to create the letter box to hold the alphabets
 const newLetter = () => {
     //created a ul element
