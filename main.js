@@ -12,7 +12,7 @@ const categories = {
 }
 
 const startGameButton = ''
-const categoriesMenu = ''
+const categoriesMenu = document.querySelector('.category-container')
 const hint = ''
 const letterBox = document.querySelector('.letterbox')
 const wrongLetters = ''
@@ -28,10 +28,10 @@ const newLetter = () => {
     //created a ul element
     alphabetList = document.createElement('div')
     for (let i = 0; i < alphabetForLetterBox.length; i++) {
-        alphabetList.classList.add = 'alphabet-box'
+        alphabetList.class = 'alphabet-box'
         //create list element
         listEl = document.createElement('div')
-        listEl.classList.add = 'squares'
+        listEl.class = 'squares'
         //add the alphabet index to each li element
         listEl.innerHTML = alphabetForLetterBox[i];
         //append the ul to the div and the li to the ul
@@ -39,3 +39,27 @@ const newLetter = () => {
         alphabetList.appendChild(listEl)
     }
 }
+console.log(newLetter())
+
+
+//select a category
+const categoeriesMenuList = () =>{
+    //create new div
+    categoryDiv = document.createElement('div')
+    categoryDiv.classList.add = 'categoList'
+    categoryDiv.innerHTML = 'Category'
+    //loop tr
+
+    for(let i = 0; i < Object.keys(categories).length; i++) {
+        listCategEl = document.createElement('div')
+        listCategEl.classList.add = 'categoryWords'
+        listCategEl.innerHTML = Object.keys(categories)[i]
+        categoriesMenu.appendChild(categoryDiv)
+        categoryDiv.appendChild(listCategEl)
+
+    }
+}
+console.log(categoeriesMenuList())
+
+
+
