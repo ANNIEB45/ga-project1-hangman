@@ -44,16 +44,19 @@ console.log(newLetter())
 
 //select a category
 const categoeriesMenuList = () =>{
-    //create new div
+    //create new div for category button
     categoryDiv = document.createElement('div')
     categoryDiv.classList.add = 'categoList'
     categoryDiv.innerHTML = 'Category'
-    //loop tr
+    //loop through the category keys
 
     for(let i = 0; i < Object.keys(categories).length; i++) {
+        //create a list div
         listCategEl = document.createElement('div')
         listCategEl.classList.add = 'categoryWords'
+        //add category keys to list div
         listCategEl.innerHTML = Object.keys(categories)[i]
+        //append the list div to the new div and new div to category div
         categoriesMenu.appendChild(categoryDiv)
         categoryDiv.appendChild(listCategEl)
 
