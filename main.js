@@ -12,13 +12,30 @@ const categories = {
 }
 
 const startGameButton = ''
-const categories = ''
+const categoriesMenu = ''
 const hint = ''
-const letterBox;
-const wrongLetters;
-const livesLeft = 6
-const userName;
-const score;
-const howToPlay;
+const letterBox = document.querySelector('.letterbox')
+const wrongLetters = ''
+const livesLeft = ''
+const userName = ''
+const score = ''
+const howToPlay = ''
 
-
+//alphabet list
+//div with class letter-box
+//this function is to create the letter box to hold the alphabets
+const newLetter = () => {
+    //created a ul element
+    alphabetList = document.createElement('div')
+    for (let i = 0; i < alphabetForLetterBox.length; i++) {
+        alphabetList.classList.add = 'alphabet-box'
+        //create list element
+        listEl = document.createElement('div')
+        listEl.classList.add = 'squares'
+        //add the alphabet index to each li element
+        listEl.innerHTML = alphabetForLetterBox[i];
+        //append the ul to the div and the li to the ul
+        letterBox.appendChild(alphabetList)
+        alphabetList.appendChild(listEl)
+    }
+}
