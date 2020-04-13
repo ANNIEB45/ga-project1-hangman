@@ -14,7 +14,8 @@ const categories = {
     'musical instruments': ['trombone', 'french horn', 'oboe',
         'xylophone', 'synthesizer', 'lute', 'electric guitar']
 }
-console.log(Object.keys(categories))
+// console.log(Object.keys(categories)[0])
+// console.log(Object.values(categories)[2])
 
 const startGameButton = ''
 const categoriesMenu = document.querySelector('.category-container')
@@ -61,7 +62,7 @@ const categoeriesMenuList = () => {
         listCategEl.classList = 'categoryWords'
         //add category keys to list div
         listCategEl.innerHTML = Object.keys(categories)[i]
-        console.log(listCategEl)
+        // console.log(listCategEl)
         //append the list div to the new div and new div to category div
         categoriesMenu.appendChild(categoryDiv)
         categoryDiv.appendChild(listCategEl)
@@ -70,21 +71,63 @@ const categoeriesMenuList = () => {
 }
 categoeriesMenuList()
 
-//answer input area
+// const answerField = document.querySelector('.answer-field')
+
+
+// let chosenCategory = categories['sports']
+// console.log(chosenCategory)
+
+// let word = chosenCategory[(Math.floor(Math.random()) * chosenCategory.length)]
+// console.log(word)
+
+// let answerInputField = []
+
+// for (let i = 0; i < word.length; i++){
+//         answerInputField[i] = '_'
+//     console.log(answerInputField)
+// }
+//     answerField.innerHTML = answerInputField.join(' ')
+
 const choosenCategory = document.querySelectorAll('.categoryWords')
 const answerField = document.querySelector('.answer-field')
-console.log(choosenCategory[0])
+console.log(choosenCategory)
 let answerInput = []
-const randomCategory = () => {
-    if (choosenCategory[0] === Object.keys(categories)[0]){
-        let word = Object.values(categories)[0][(Math.floor(Math.random() * Object.values(categories).length))]
-        for (let i = 0; i < word.length; i++) {
-            answerInput[i] = "-"
-        }
+
+const selectSports = () =>{
+let categorySports = Object.values(categories)[0]
+console.log(categorySports)
+let words = categorySports[(Math.floor(Math.random()) * categorySports.length)]
+    console.log(words)
+    for (let i = 0; i < words.length; i++) {
+        answerInput[i] = '_'
+        console.log(answerInput)
     }
-    answerInput.innerHTML = answerField.join(' ')
 }
-randomCategory()
+
+choosenCategory.addEventListener('click', selectSports)
+
+
+let categoryFashionIcons = Object.values(categories)[1]
+console.log(categoryFashionIcons)
+
+let categoryFamousCities = Object.values(categories)[2]
+console.log(categoryFamousCities)
+
+let categoryMusicalInstruments = Object.values(categories)[3]
+console.log(categoryMusicalInstruments)
+
+// if (choosenCategory === Object.keys(categories)[0]) {
+    // let words = categorySports[(Math.floor(Math.random()) * categorySports.length)]
+    // console.log(words)
+    // for (let i = 0; i < words.length; i++) {
+    //     answerInput[i] = '_'
+    //     console.log(answerInput)
+    // }
+    answerField.innerHTML = answerInput.join(' ')
+
+
+// }
+
 //     choosenCategory[1] === Object.keys(categories)[1]
 //     choosenCategory[2] === Object.keys(categories)[2] 
 //     choosenCategory[3] === Object.keys(categories)[3]) {

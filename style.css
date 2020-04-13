@@ -6,6 +6,7 @@ body {
    color: green;
    background-color: white;
    font-size: 16px;
+   display: flex;
    margin: 15px;
    padding: 0;
    max-width: 90px;
@@ -14,7 +15,7 @@ body {
 .squares{
    border: 3px solid red;
    display: flex;
-   
+   flex-direction: row;
    justify-content: space-around;
    margin: 0 10px 10px 0;
    width: 35px;
