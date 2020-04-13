@@ -6,19 +6,35 @@ body {
    color: green;
    background-color: white;
    font-size: 16px;
+   margin: 15px;
+   padding: 0;
+   max-width: 90px;
+
 }
-
-
-.tooltip1 {
-   position: relative;
+.squares{
    border: 3px solid red;
    display: flex;
-   flex-direction: row;
-   justify-content: space-evenly;
-   align-items: flex-start;
+   
+   justify-content: space-around;
+   margin: 0 10px 10px 0;
+   width: 35px;
+   height: 30px;
+   padding-top: 10px;
+   border-radius: 25px;
 }
 
-.tooltip1 .tooltip-text1 {
+
+
+.tooltip {
+   position: relative;
+   border: 3px solid white;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+}
+
+.tooltip .tooltip-text {
    visibility: hidden;
    width: 120px;
    background-color: black;
@@ -30,7 +46,7 @@ body {
    z-index: 1;
 }
 
-.tooltip1:hover .tooltip-text1{
+.tooltip:hover .tooltip-text{
    visibility: visible;
 }
 

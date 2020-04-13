@@ -33,10 +33,10 @@ const newLetter = () => {
     //created a ul element
     alphabetList = document.createElement('div')
     for (let i = 0; i < alphabetForLetterBox.length; i++) {
-        alphabetList.class = 'alphabet-box'
+        alphabetList.classList = 'alphabet-box'
         //create list element
         listEl = document.createElement('div')
-        listEl.class = 'squares'
+        listEl.classList = 'squares'
         //add the alphabet index to each li element
         listEl.innerHTML = alphabetForLetterBox[i];
         //append the ul to the div and the li to the ul
@@ -51,14 +51,14 @@ newLetter()
 const categoeriesMenuList = () => {
     //create new div for category button
     categoryDiv = document.createElement('div')
-    categoryDiv.classList.add = 'categoList'
+    categoryDiv.classList = 'categoList'
     categoryDiv.innerHTML = 'Category'
     //loop through the category keys
 
     for (let i = 0; i < Object.keys(categories).length; i++) {
         //create a list div
         listCategEl = document.createElement('div')
-        listCategEl.classList.add = 'categoryWords'
+        listCategEl.classList = 'categoryWords'
         //add category keys to list div
         listCategEl.innerHTML = Object.keys(categories)[i]
         console.log(listCategEl)
@@ -70,18 +70,29 @@ const categoeriesMenuList = () => {
 }
 categoeriesMenuList()
 
-// //answer input area
-// let answerInputFied = []
-// const selectCategory = () =>{
-//     if(categoryDiv === Object.keys(categories)[0]){
-//         sportsRandom = Object.keys(categories)[0][(Math.floor(Math.random()*Object.keys(categories)[0]))]
-//         // word1 = sportsRandom
-//         // console.log(word1)
-//         // for(let i = 0; i < word1.eltn)
+//answer input area
+const choosenCategory = document.querySelectorAll('.categoryWords')
+const answerField = document.querySelector('.answer-field')
+console.log(choosenCategory[0])
+let answerInput = []
+const randomCategory = () => {
+    if (choosenCategory[0] === Object.keys(categories)[0]){
+        let word = Object.values(categories)[0][(Math.floor(Math.random() * Object.values(categories).length))]
+        for (let i = 0; i < word.length; i++) {
+            answerInput[i] = "-"
+        }
+    }
+    answerInput.innerHTML = answerField.join(' ')
+}
+randomCategory()
+//     choosenCategory[1] === Object.keys(categories)[1]
+//     choosenCategory[2] === Object.keys(categories)[2] 
+//     choosenCategory[3] === Object.keys(categories)[3]) {
+//        const word = Object.values(categories)[(Math.floor(Math.random()* Object.values(categories).length))]
+//             for(let i = 0; i < word.length; i++)
 //     }
 // }
-// selectCategory()
-// console.log(selectCategory())
 
-// console.log(categoryDiv)
+// const word = Object.values(categories)[1][(Math.floor(Math.random()* Object.values(categories).length))]
+// console.log(word)
 
