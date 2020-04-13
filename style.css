@@ -2,6 +2,32 @@ body {
    font-size: 15px;
 }
 
+.lives{
+   font-size: 25px;
+}
+.category-container{
+   display: flex;
+   
+}
+
+.categoList{
+   font-size: 30px;
+   margin: 15px;
+   padding: 0;
+   max-width: 150px;
+   
+   
+}
+
+.categoryWords{
+   font-size: 20px;
+   border: 3px solid black;
+   margin: 0 10px 10px 0;
+   border-radius: 30px;
+   text-align: center;
+
+}
+
 .letterbox{
    color: green;
    background-color: white;
@@ -10,6 +36,7 @@ body {
    margin: 15px;
    padding: 0;
    max-width: 90px;
+   position: relative;
 
 }
 .squares{
@@ -51,3 +78,10 @@ body {
    visibility: visible;
 }
 
+.reset{
+   font-size: 20px;
+   border-radius: 30px;
+   border: 2px solid red;
+   max-width: 90px;
+   padding: 10px;
+}

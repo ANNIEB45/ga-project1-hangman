@@ -14,8 +14,14 @@ const categories = {
     'musical instruments': ['trombone', 'french horn', 'oboe',
         'xylophone', 'synthesizer', 'lute', 'electric guitar']
 }
-// console.log(Object.keys(categories)[0])
-// console.log(Object.values(categories)[2])
+let categorySports = Object.values(categories)[0]
+let categoryFashionIcons = Object.values(categories)[1]
+let categoryFamousCities = Object.values(categories)[2]
+let categoryMusicalInstruments = Object.values(categories)[3]
+
+
+
+
 
 const startGameButton = ''
 const categoriesMenu = document.querySelector('.category-container')
@@ -93,49 +99,74 @@ const answerField = document.querySelector('.answer-field')
 console.log(choosenCategory)
 let answerInput = []
 
-const selectSports = () =>{
-let categorySports = Object.values(categories)[0]
-console.log(categorySports)
-let words = categorySports[(Math.floor(Math.random()) * categorySports.length)]
-    console.log(words)
-    for (let i = 0; i < words.length; i++) {
-        answerInput[i] = '_'
-        console.log(answerInput)
-    }
-}
 
-choosenCategory.addEventListener('click', selectSports)
-
-
-let categoryFashionIcons = Object.values(categories)[1]
-console.log(categoryFashionIcons)
-
-let categoryFamousCities = Object.values(categories)[2]
-console.log(categoryFamousCities)
-
-let categoryMusicalInstruments = Object.values(categories)[3]
-console.log(categoryMusicalInstruments)
-
-// if (choosenCategory === Object.keys(categories)[0]) {
-    // let words = categorySports[(Math.floor(Math.random()) * categorySports.length)]
-    // console.log(words)
-    // for (let i = 0; i < words.length; i++) {
-    //     answerInput[i] = '_'
-    //     console.log(answerInput)
-    // }
-    answerField.innerHTML = answerInput.join(' ')
-
-
-// }
-
-//     choosenCategory[1] === Object.keys(categories)[1]
-//     choosenCategory[2] === Object.keys(categories)[2] 
-//     choosenCategory[3] === Object.keys(categories)[3]) {
-//        const word = Object.values(categories)[(Math.floor(Math.random()* Object.values(categories).length))]
-//             for(let i = 0; i < word.length; i++)
+// let selectCategories = () => {
+//     if(choosenCategory === categorySports){
+//         let word1 = categorySports[(Math.floor(Math.random()) * categorySports.length)] 
+//         console.log(words)
+//     }else if(choosenCategory === categoryFashionIcons){
+//         let word2 = categoryFashionIcons[(Math.floor(Math.random()) * categoryFashionIcons.length)]
+//     }else if(choosenCategory === categoryFamousCities){
+//         let word3 = categoryFamousCities[(Math.floor(Math.random()) * categoryFamousCities.length)]
+//     }else if(choosenCategory === categoryMusicalInstruments){
+//         let word4 = categoryMusicalInstruments[(Math.floor(Math.random()) * categoryMusicalInstruments.length)]
 //     }
 // }
+// selectCategories()
 
-// const word = Object.values(categories)[1][(Math.floor(Math.random()* Object.values(categories).length))]
-// console.log(word)
+
+console.log(categorySports)
+const selectSport = () => {
+    let words = categorySports[(Math.floor(Math.random()) * categorySports.length)]
+    console.log(words)
+for (let i = 0; i < words.length; i++) {
+    answerInput[i] = '_'
+    console.log(answerInput)
+    }
+    answerField.innerHTML = answerInput.join(' ')
+}
+selectSport()
+
+
+// let categoryFashionIcons = Object.values(categories)[1]
+// console.log(categoryFashionIcons)
+// const selectFashion = () => {
+//     let words = categoryFashionIcons[(Math.floor(Math.random()) * categoryFashionIcons.length)]
+//     console.log(words)
+// for (let i = 0; i < words.length; i++) {
+//     answerInput[i] = '_'
+//     console.log(answerInput)
+//     }
+//     answerField.innerHTML = answerInput.join(' ')
+// }
+// // selectFashion()
+
+
+// let categoryFamousCities = Object.values(categories)[2]
+// console.log(categoryFamousCities)
+// const selectCities = () => {
+//     let words = categoryFamousCities[(Math.floor(Math.random()) * categoryFamousCities.length)]
+//     console.log(words)
+// for (let i = 0; i < words.length; i++) {
+//     answerInput[i] = '_'
+//     console.log(answerInput)
+//     }
+//     answerField.innerHTML = answerInput.join(' ')
+// }
+// // selectCities()
+
+// let categoryMusicalInstruments = Object.values(categories)[3]
+// console.log(categoryMusicalInstruments)
+// const selectInstruments = () => {
+//     let words = categoryMusicalInstruments[(Math.floor(Math.random()) * categoryMusicalInstruments.length)]
+//     console.log(words)
+// for (let i = 0; i < words.length; i++) {
+//     answerInput[i] = '_'
+//     console.log(answerInput)
+//     }
+//     answerField.innerHTML = answerInput.join(' ')
+// }
+// selectInstruments()
+
+
 
