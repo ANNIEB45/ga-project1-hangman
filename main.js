@@ -22,7 +22,8 @@ let categoryMusicalInstruments = Object.values(categories)[3]
 
 
 
-
+const choosenCategory = document.querySelectorAll('.categoryWords')
+const answerField = document.querySelector('.answer-field')
 const startGameButton = ''
 const categoriesMenu = document.querySelector('.category-container')
 const hint = ''
@@ -32,6 +33,7 @@ const livesLeft = 0
 const userName = ''
 const score = ''
 const howToPlay = ''
+const guess = ''
 
 
 //div with class letter-box
@@ -59,9 +61,11 @@ const categoeriesMenuList = () => {
     //create new div for category button
     categoryDiv = document.createElement('div')
     categoryDiv.classList = 'categoList'
-    categoryDiv.innerHTML = 'Category'
+    categoryHeading = document.createElement('p')
+    categoryHeading.classList = 'category-heading'
+    categoryHeading.innerHTML = 'Category'
+    categoryDiv.appendChild(categoryHeading)
     //loop through the category keys
-
     for (let i = 0; i < Object.keys(categories).length; i++) {
         //create a list div
         listCategEl = document.createElement('div')
@@ -72,60 +76,31 @@ const categoeriesMenuList = () => {
         //append the list div to the new div and new div to category div
         categoriesMenu.appendChild(categoryDiv)
         categoryDiv.appendChild(listCategEl)
-
     }
 }
 categoeriesMenuList()
 
-// const answerField = document.querySelector('.answer-field')
 
-
-// let chosenCategory = categories['sports']
-// console.log(chosenCategory)
-
-// let word = chosenCategory[(Math.floor(Math.random()) * chosenCategory.length)]
-// console.log(word)
-
-// let answerInputField = []
-
-// for (let i = 0; i < word.length; i++){
-//         answerInputField[i] = '_'
-//     console.log(answerInputField)
-// }
-//     answerField.innerHTML = answerInputField.join(' ')
-
-const choosenCategory = document.querySelectorAll('.categoryWords')
-const answerField = document.querySelector('.answer-field')
-console.log(choosenCategory)
 let answerInput = []
-
-
-// let selectCategories = () => {
-//     if(choosenCategory === categorySports){
-//         let word1 = categorySports[(Math.floor(Math.random()) * categorySports.length)] 
-//         console.log(words)
-//     }else if(choosenCategory === categoryFashionIcons){
-//         let word2 = categoryFashionIcons[(Math.floor(Math.random()) * categoryFashionIcons.length)]
-//     }else if(choosenCategory === categoryFamousCities){
-//         let word3 = categoryFamousCities[(Math.floor(Math.random()) * categoryFamousCities.length)]
-//     }else if(choosenCategory === categoryMusicalInstruments){
-//         let word4 = categoryMusicalInstruments[(Math.floor(Math.random()) * categoryMusicalInstruments.length)]
-//     }
-// }
-// selectCategories()
-
-
 console.log(categorySports)
+
 const selectSport = () => {
     let words = categorySports[(Math.floor(Math.random()) * categorySports.length)]
     console.log(words)
-for (let i = 0; i < words.length; i++) {
-    answerInput[i] = '_'
-    console.log(answerInput)
+    for (let i = 0; i < words.length; i++) {
+        answerInput[i] = '_'
+        console.log(answerInput)
     }
     answerField.innerHTML = answerInput.join(' ')
 }
 selectSport()
+
+const userGuess = () =>{
+    
+    }
+
+
+
 
 
 // let categoryFashionIcons = Object.values(categories)[1]
@@ -169,4 +144,16 @@ selectSport()
 // selectInstruments()
 
 
-
+// let selectCategories = () => {
+//     if(choosenCategory === categorySports){
+//         let word1 = categorySports[(Math.floor(Math.random()) * categorySports.length)] 
+//         console.log(words)
+//     }else if(choosenCategory === categoryFashionIcons){
+//         let word2 = categoryFashionIcons[(Math.floor(Math.random()) * categoryFashionIcons.length)]
+//     }else if(choosenCategory === categoryFamousCities){
+//         let word3 = categoryFamousCities[(Math.floor(Math.random()) * categoryFamousCities.length)]
+//     }else if(choosenCategory === categoryMusicalInstruments){
+//         let word4 = categoryMusicalInstruments[(Math.floor(Math.random()) * categoryMusicalInstruments.length)]
+//     }
+// }
+// selectCategories()

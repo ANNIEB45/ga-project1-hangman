@@ -1,5 +1,7 @@
 body {
    font-size: 15px;
+   padding: 10px;
+   margin: 10px;
 }
 
 .lives{
@@ -14,16 +16,24 @@ body {
    font-size: 30px;
    margin: 15px;
    padding: 0;
-   max-width: 150px;
+   max-width: 190px;
+   display: flex;
+   flex-direction: row;  
    
    
+}
+
+.categoList .category-heading{
+   font-size: 40px;
+   margin-right: 30px;
 }
 
 .categoryWords{
    font-size: 20px;
    border: 3px solid black;
    margin: 0 10px 10px 0;
-   border-radius: 30px;
+   border-radius: 10px;
+   padding: 7px;
    text-align: center;
 
 }
@@ -39,25 +49,49 @@ body {
    position: relative;
 
 }
-.squares{
-   border: 3px solid red;
+.alphabet-box {
    display: flex;
    flex-direction: row;
    justify-content: space-around;
+   align-items: center;
+   
+}
+
+.squares{
+   border: 3px solid red;
    margin: 0 10px 10px 0;
    width: 35px;
    height: 30px;
    padding-top: 10px;
    border-radius: 25px;
+   text-align: center;
 }
 
+.answer-field{
+   margin: 40px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
 
+.hint{
+   font-size: 30px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   margin-top: 40px;
+}
 
-.tooltip {
+.instructions{
+   display: flex;
+   justify-content: flex-end;
+   align-items: flex-start;
+}
+
+.tooltip .hint{
    position: relative;
    border: 3px solid white;
    display: flex;
-   flex-direction: column;
    justify-content: center;
    align-items: center;
 }
@@ -68,7 +102,7 @@ body {
    background-color: black;
    color: #fff;
    text-align: center;
-   padding: 5px 0;
+   padding: 40px 20px;
    border-radius: 6px;
    position: absolute;
    z-index: 1;
