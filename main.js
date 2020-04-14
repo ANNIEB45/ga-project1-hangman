@@ -7,9 +7,8 @@ const letter = 'a'
 const letterBox = document.querySelector('.letterbox')
 
 
-
     //this function is to create the letter box to hold the alphabets
-const newLetter = () => {
+const alphabetBox = () => {
     //created a ul element
     alphabetList = document.createElement('div')
     for (let i = 0; i < alphabet.length; i++) {
@@ -22,24 +21,29 @@ const newLetter = () => {
         //append the ul to the div and the li to the ul
         letterBox.appendChild(alphabetList)
         alphabetList.appendChild(listEl)
-        // when user clicks letter check 
+    }
+}
+alphabetBox()
+
+// let secretLetter = letter
+const alphabetSquares = document.querySelectorAll('.squares')
+console.log(alphabetSquares)
+
+const userGuess = (evt) =>{
+    let selectedLetter = evt.target.innerText
+    console.log('i clicked letter:', letter)
+}
+alphabetSquares.forEach(square => {
+    square.addEventListener('click', userGuess)
+})
+
+//is a clicked === a in secret word(true or false)
+          // when user clicks letter check 
 // if letter is inside of secretWord string
 // if true console
 //letter appears in secretWord display field in correct spot
 //count of correct letter 
-//
-    }
-}
-newLetter()
-
-letterBox.addEventListener('click', () =>{
-    //is a clicked === a in secret word(true or false)
-    const secretLetter = 'a'
-    const checkLetter = str.includes('a')
-    //if it is true, console.log(it is true)
-    if(){
-        console.log('it is true')
-    }
+// 
 
 
 
@@ -47,4 +51,3 @@ letterBox.addEventListener('click', () =>{
 
 
 
-})
