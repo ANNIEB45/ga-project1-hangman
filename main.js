@@ -51,7 +51,8 @@ for (let i = 0; i < letter.length; i++) {
     }
 }
 blankSpace.innerHTML = answerLine.join(' ')
-
+//create another for loop to check if selected letter is part of guesses or wrong guesses area
+//if so, replace lines with the letter
 
 const userGuess = (evt) => {
     //event to listen for click on each specific letter
@@ -62,9 +63,8 @@ const userGuess = (evt) => {
         //push it into the guesses array
         guesses.push(selectedLetter)
         console.log('the letter guessed: ', guesses)
-        if(guesses.includes(letter)){
+        removeFromSelectedLetter(selectedLetter)
         alert('Congratulations. You guessed the right letter')
-        }
         //game ends, the guess array is blank and the lives start over
         resetGame()
         return
@@ -72,6 +72,7 @@ const userGuess = (evt) => {
     } else {
         wrongLetter.push(selectedLetter)
         console.log('I guessed these wrong: ', wrongLetter)
+        removeFromSelectedLetter(selectedLetter)
         lives--
         console.log("you have: ", lives, 'lives')
         alert('Wrong Letter. Try Again')
@@ -94,6 +95,17 @@ const resetGame = () => {
         lives = 6
     }
 }
+
+
+const removeFromSelectedLetter = (letter) => {
+    hideLetters = Array.from(alphabetSquares).find(function(alpha){
+        return alpha.innerText === selectedLetter})
+    hideLetters.classList.add('hide')
+    hideLetters.removeEventListener('click', userGuess)
+}
+
+
+
 
 const playAgainButton = (e) => {
     let restart = e.target.innerHTML
