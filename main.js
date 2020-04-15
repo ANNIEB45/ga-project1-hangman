@@ -146,7 +146,7 @@ const userGuess = (evt) => {
         resetGame()
     }
 }
-//INCOMPLETE
+//WORKING PARTIALLY
 
 const addToWrongBox = () => {
     //append letters to .wrong-box div
@@ -155,16 +155,18 @@ const addToWrongBox = () => {
 }//WORKING 
 
 const checkWordCompletion = () => {
-    let wholeWordGuessed = false
+    let wholeWordGuessed = secretWord
     //check if the entire word has been guessed
     if (wholeWordGuessed === guesses + secretWord) {
         wholeWordGuessed = true
         alert("YOU WIN!")
         resetGame()
+    } else{
+        return false
     }
     console.log('this is the completed word ', wholeWordGuessed)
 }
-checkWordCompletion() //INCOMPLETE
+// checkWordCompletion() //NOT WORKING
 
 const hintButton = (e) => {
 
@@ -195,12 +197,14 @@ const loseGame = () => {
 
 
 const resetGame = () => {
+    guesses = []
     wrongLetters = []
     livesLeft = 6
     livesArea.innerHTML = `${livesLeft} lives left`
-    wrongBox = []
+    wrongBox.innerHTML = []
     hideLetters.classList.remove('hide')
-}//INCOMPLETE
+    answerLine = []
+}//NOT WORKING
 
 
 
@@ -224,7 +228,7 @@ const playAgainButton = (e) => {
     // livesArea.innerHTML = `${livesLeft} lives left`
     alert("Let's play again")
     resetGame()
-}//WORKING
+}//WORKING PARTIALLY
 
 //event listener to play again button... will reset game
 restartGame.addEventListener('click', playAgainButton)
