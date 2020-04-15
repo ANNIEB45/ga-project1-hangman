@@ -2,6 +2,7 @@ body {
    font-size: 15px;
    padding: 10px;
    margin: 10px;
+   
 }
 
 h1{
@@ -63,12 +64,19 @@ h1{
 
 }
 
+.letter-container{
+   display: flex;
+   flex-direction: row;
+   flex-wrap: wrap;
+}
+
 .letterbox{
    color: black;
    font-family: 'Press Start 2P', cursive;
    background-color: white;
    font-size: 20px;
    display: flex;
+   flex-direction: row;
    margin: 15px;
    padding: 0;
    max-width: 90px;
@@ -76,8 +84,7 @@ h1{
 
 .alphabet-box {
    display: flex;
-   flex-direction: row;
-   justify-content: space-around;
+   justify-content: flex-start;
    align-items: center;     
 }
 
@@ -96,7 +103,9 @@ h1{
    visibility: hidden;
 }
 .answer-field{
-   margin: 40px;
+   font-size: 60px;
+   margin: 70px;
+   padding: 20px;
    display: flex;
    align-items: center;
    justify-content: center;
@@ -104,7 +113,8 @@ h1{
 
 .wrong-box{
    display: flex;
-   justify-content: flex-end;
+   justify-content: flex-start;
+   align-items: flex-start;
    background-color: yellow;
    font-family: 'Bangers', cursive;
    font-size: 30px;

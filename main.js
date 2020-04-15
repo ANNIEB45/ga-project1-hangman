@@ -155,14 +155,11 @@ const addToWrongBox = () => {
 }//WORKING 
 
 const checkWordCompletion = () => {
-    let wholeWordGuessed = secretWord
+    let wholeWordGuessed = false
     //check if the entire word has been guessed
     if (wholeWordGuessed === guesses + secretWord) {
-        wholeWordGuessed = true
         alert("YOU WIN!")
         resetGame()
-    } else{
-        return false
     }
     console.log('this is the completed word ', wholeWordGuessed)
 }
@@ -202,8 +199,6 @@ const resetGame = () => {
     livesLeft = 6
     livesArea.innerHTML = `${livesLeft} lives left`
     wrongBox.innerHTML = []
-    hideLetters.classList.remove('hide')
-    answerLine = []
 }//NOT WORKING
 
 
