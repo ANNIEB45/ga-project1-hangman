@@ -2,7 +2,7 @@ body {
    font-size: 15px;
    padding: 10px;
    margin: 10px;
-   
+   w;
 }
 
 h1{
@@ -79,13 +79,16 @@ h1{
    flex-direction: row;
    margin: 15px;
    padding: 0;
-   max-width: 90px;
+   /* max-width: 90px; */
 }
 
 .alphabet-box {
    display: flex;
+   flex-wrap: wrap;
    justify-content: flex-start;
-   align-items: center;     
+   align-items: center;   
+   width: 100%; 
+
 }
 
 .squares{
