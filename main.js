@@ -2,18 +2,39 @@
 const alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k',
     'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
 
-const letter = 'annie- is- cool'
-console.log('the secret letter is: ', letter)
+    //categories
+const categories = {
+    'sports': ['baseball', 'cricket', 'judo', 'hang gliding',
+        'volleyball', 'yoga'],
+    'fashion icons': ['audrey hepburn', 'rihanna', 'mary and ashley olsen',
+        'princess diana', 'bob dylan', 'kanye west'],
+    'famous cities': ['paris', 'dubai', 'new york', 'kuala lumpa',
+        'istanbul', 'london', 'los angelos'],
+    'musical instruments': ['trombone', 'french horn', 'oboe',
+        'xylophone', 'synthesizer', 'lute', 'electric guitar']
+}
 
+//variables and dom elements
+    //const variables
+const answerField = document.querySelector('.answer-field')
+const letterBox = document.querySelector('.letterbox')
+const categoriesMenu = document.querySelector('.category-container')
+const hint = ''
+const wrongBox = document.querySelector('.wrong-box')
+const livesArea = document.querySelector('.lives')
+const restartGame = document.querySelector('.reset')
+const hint = ''
+const userName = ''
+const score = ''
+const howToPlay = ''
+const startGameButton = ''
+    //let variables
 let guesses = []
 let wrongLetter = []
 let lives = 6
-let gameIsFinished = false
 
 
-const letterBox = document.querySelector('.letterbox')
-
-
+//div with class letter-box
 //this function is to create the letter box to hold the alphabets
 const alphabetBox = () => {
     //created a ul element
@@ -31,20 +52,20 @@ const alphabetBox = () => {
     }
 }
 alphabetBox()
+
+
 // let secretLetter = letter
 const alphabetSquares = document.querySelectorAll('.squares')
 console.log(alphabetSquares)
-
-const restartGame = document.querySelector('.reset')
-console.log(restartGame)
 
 let blankSpace = document.querySelector('.answer-field')
 let answerLine = []
 let space;
 
+//creating lines for word
 for (let i = 0; i < letter.length; i++) {
     if (letter[i] === '') {
-        answerLine[i] += '&nbsp'
+        answerLine[i] += ''
     } else {
         answerLine[i] = "_"
         console.log(answerLine)
@@ -53,6 +74,7 @@ for (let i = 0; i < letter.length; i++) {
 blankSpace.innerHTML = answerLine.join(' ')
 //create another for loop to check if selected letter is part of guesses or wrong guesses area
 //if so, replace lines with the letter
+
 
 const userGuess = (evt) => {
     //event to listen for click on each specific letter
@@ -63,16 +85,17 @@ const userGuess = (evt) => {
         //push it into the guesses array
         guesses.push(selectedLetter)
         console.log('the letter guessed: ', guesses)
-        removeFromSelectedLetter(selectedLetter)
+        // removeFromSelectedLetter(selectedLetter)
+        resetGame()
         alert('Congratulations. You guessed the right letter')
         //game ends, the guess array is blank and the lives start over
-        resetGame()
+
         return
 
     } else {
         wrongLetter.push(selectedLetter)
         console.log('I guessed these wrong: ', wrongLetter)
-        removeFromSelectedLetter(selectedLetter)
+        // removeFromSelectedLetter(selectedLetter)
         lives--
         console.log("you have: ", lives, 'lives')
         alert('Wrong Letter. Try Again')
@@ -82,14 +105,13 @@ const userGuess = (evt) => {
 
 const resetGame = () => {
     if (lives === 0) {
-        alert('Aww, you ran out of lives. The letter was ', letter)
-        gameIsFinished = true
-        console.log(gameIsFinished)
+        alert('Aww, you ran out of lives. The word was: ' + letter)
         wrongLetter = []
         lives = 6
-    } else if (guesses[0] === 'a') {
-        gameIsFinished = true
-        console.log(gameIsFinished)
+    } else {
+        //if guess is equal to the word
+        for (let j = 0; j < guesses.length; i++) {
+        }
         guesses = []
         wrongLetter = []
         lives = 6
@@ -97,12 +119,12 @@ const resetGame = () => {
 }
 
 
-const removeFromSelectedLetter = (letter) => {
-    hideLetters = Array.from(alphabetSquares).find(function(alpha){
-        return alpha.innerText === selectedLetter})
-    hideLetters.classList.add('hide')
-    hideLetters.removeEventListener('click', userGuess)
-}
+// const removeFromSelectedLetter = (letter) => {
+//     hideLetters = Array.from(alphabetSquares).find(function(alpha){
+//         return alpha.innerText === selectedLetter})
+//     hideLetters.classList.add('hide')
+//     hideLetters.removeEventListener('click', userGuess)
+// }
 
 
 
@@ -112,10 +134,11 @@ const playAgainButton = (e) => {
     lives = 6
     guesses = []
     wrongLetter = []
+    blankSpace = '_'
     alert("Let's play again")
 
 }
-
+//event listener to play again button... will reset game
 restartGame.addEventListener('click', playAgainButton)
 //click listener on the letter the user guesses
 alphabetSquares.forEach(square => {
