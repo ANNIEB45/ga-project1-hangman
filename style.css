@@ -4,8 +4,20 @@ body {
    margin: 10px;
 }
 
+h1{
+   text-align: center;
+   font-size: 45px;
+   color: cornflowerblue;
+}
+
 .lives{
    font-size: 25px;
+   border: 2px solid black;
+   border-radius: 10px;
+   background-color: chocolate;
+   margin: 0 10px 10px 0;
+   padding: 5px;
+   width: 90px;
 }
 .category-container{
    display: flex;
@@ -31,10 +43,11 @@ body {
 .categoryWords{
    font-size: 20px;
    border: 3px solid black;
-   margin: 0 10px 10px 0;
+   margin: 0 10px 20px 0;
    border-radius: 10px;
    padding: 7px;
    text-align: center;
+   background-color: cornflowerblue;
 
 }
 
@@ -96,35 +109,12 @@ body {
    margin-top: 40px;
 }
 
-.instructions h2 p{
+.instructions{
    display: flex;
-   justify-content: flex-start;
+   justify-content: flex-end;
    align-items: flex-end;
 }
 
-.tooltip .hint{
-   position: relative;
-   border: 3px solid white;
-   display: flex;
-   justify-content: center;
-   align-items: center;
-}
-
-.tooltip .tooltip-text {
-   visibility: hidden;
-   width: 120px;
-   background-color: black;
-   color: #fff;
-   text-align: center;
-   padding: 40px 20px;
-   border-radius: 6px;
-   position: absolute;
-   z-index: 1;
-}
-
-.tooltip:hover .tooltip-text{
-   visibility: visible;
-}
 
 .reset{
    font-size: 20px;

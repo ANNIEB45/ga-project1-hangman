@@ -24,11 +24,6 @@ const livesArea = document.querySelector('.lives')
 const restartGame = document.querySelector('.reset')
 const hintsInput = document.querySelector('.hint')
 const clueInput = document.querySelector('.clue')
-
-const userName = ''
-const score = ''
-const howToPlay = ''
-const startGameButton = ''
 const wins = document.querySelector('.wins')
 //let variables
 let guesses = []
@@ -127,20 +122,25 @@ const userGuess = (evt) => {
         //add the letter to the secret word line
         addWordToLine()
         alert('YAY. You guessed the right letter.')
-
+        checkWordCompletion()
+        //WORKING
     } else {
+        //if letter is not part of secret word
         livesLeft--
+        //decrement lives
         livesArea.innerHTML = `${livesLeft} lives left`
+        //innerHTML will change in real time to show current live left
         console.log("you have: ", livesLeft, 'lives')
-
+        //letter will be added to wrong letter array-attached to wrong box
         wrongLetters.push(selectedLetter)
         console.log('I guessed these wrong: ', wrongLetters)
         //disable letter from being used again
         disableSelectedLetter(selectedLetter)
-        //add letter to wrong letter box
+        //add letter from wrong letter box
         addToWrongBox(selectedLetter)
         alert('Wrong Letter. Try Again')
     }
+    //when live is 0, this alert will show and the game will reset
     if (livesLeft === 0) {
         alert('Aww, you ran out of lives. The word was ' + secretWord)
         resetGame()
@@ -155,18 +155,16 @@ const addToWrongBox = () => {
 }//WORKING 
 
 const checkWordCompletion = () => {
-    // let wholeWordGuessed = false
+    let wholeWordGuessed = false
     //check if the entire word has been guessed
-    let wholeWordGuessed = secretWord
-    console.log('this is the completed word ', wholeWordGuessed)
-    if (wholeWordGuessed === true) {
+    if (wholeWordGuessed === guesses + secretWord) {
+        wholeWordGuessed = true
         alert("YOU WIN!")
         resetGame()
-    } else {
-        wholeWordGuessed = false
     }
+    console.log('this is the completed word ', wholeWordGuessed)
 }
-checkWordCompletion()//INCOMPLETE
+checkWordCompletion() //INCOMPLETE
 
 const hintButton = (e) => {
 
@@ -186,8 +184,9 @@ const hintButton = (e) => {
 hintsInput.addEventListener('click', hintButton)
 
 const winGame = () => {
-
+    //if player has guessed the correct word
 }//INCOMPLETE
+
 
 const loseGame = () => {
 
@@ -199,9 +198,8 @@ const resetGame = () => {
     wrongLetters = []
     livesLeft = 6
     livesArea.innerHTML = `${livesLeft} lives left`
-    blankSpace = ''
     wrongBox = []
-    answerLine = []
+    hideLetters.classList.remove('hide')
 }//INCOMPLETE
 
 
@@ -222,8 +220,8 @@ const howToPlayButton = () => {
 
 const playAgainButton = (e) => {
     let restart = e.target.innerHTML
-    livesLeft = 6
-    livesArea.innerHTML = `${livesLeft} lives left`
+    // livesLeft = 6
+    // livesArea.innerHTML = `${livesLeft} lives left`
     alert("Let's play again")
     resetGame()
 }//WORKING
